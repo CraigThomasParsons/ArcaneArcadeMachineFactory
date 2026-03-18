@@ -1,0 +1,7 @@
+{
+  "schema_version": "v1",
+  "emit_mode": "contract_only",
+  "projection_mode": "enforce",
+  "phase": "enforce",
+  "updated_at": "2026-03-18T05:22:01.045008+00:00"
+}

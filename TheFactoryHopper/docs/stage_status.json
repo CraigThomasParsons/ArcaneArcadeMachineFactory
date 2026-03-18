@@ -1,0 +1,194 @@
+{
+  "schema_version": "v1",
+  "stages": {
+    "ingest-room": {
+      "status": "ok",
+      "updated_at": "2026-03-16T23:08:05.091127+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "artifact_count": 2,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b71380-7c8c-832b-88e0-4e82fb137edc"
+      }
+    },
+    "writers-room": {
+      "status": "ok",
+      "updated_at": "2026-03-17T16:16:48.114561+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b871d2-44b0-8325-ab43-452073cd61c9",
+        "artifact_count": 9,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b871d2-44b0-8325-ab43-452073cd61c9",
+        "claim": {
+          "lock": "acquired",
+          "lock_file": ".claim.lock",
+          "reclaimed_stale_lock": false,
+          "reclaimed_foreign_lock": false,
+          "selection_order": 1,
+          "selection_total": 1
+        }
+      }
+    },
+    "planning-room": {
+      "status": "ok",
+      "updated_at": "2026-03-16T23:08:05.098136+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "artifact_count": 2,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b71380-7c8c-832b-88e0-4e82fb137edc"
+      }
+    },
+    "implementation-room": {
+      "status": "ok",
+      "updated_at": "2026-03-16T23:08:05.099280+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "artifact_count": 1,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b71380-7c8c-832b-88e0-4e82fb137edc"
+      }
+    },
+    "validation-room": {
+      "status": "ok",
+      "updated_at": "2026-03-16T23:08:05.100486+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "artifact_count": 2,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b71380-7c8c-832b-88e0-4e82fb137edc"
+      }
+    },
+    "game-bridge-room": {
+      "status": "ok",
+      "updated_at": "2026-03-16T23:08:05.261992+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "artifact_count": 2,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b71380-7c8c-832b-88e0-4e82fb137edc"
+      }
+    },
+    "factory-hopper": {
+      "status": "ok",
+      "updated_at": "2026-03-17T16:16:46.850788+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b871d2-44b0-8325-ab43-452073cd61c9",
+        "artifact_count": 2,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b871d2-44b0-8325-ab43-452073cd61c9",
+        "claim": {
+          "lock": "acquired",
+          "lock_file": ".claim.lock",
+          "reclaimed_stale_lock": false,
+          "reclaimed_foreign_lock": false,
+          "selection_order": 1,
+          "selection_total": 1
+        }
+      }
+    },
+    "observatory": {
+      "status": "ok",
+      "updated_at": "2026-03-17T16:16:49.263702+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b871d2-44b0-8325-ab43-452073cd61c9",
+        "artifact_count": 4,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b871d2-44b0-8325-ab43-452073cd61c9",
+        "claim": {
+          "lock": "acquired",
+          "lock_file": ".claim.lock",
+          "reclaimed_stale_lock": false,
+          "reclaimed_foreign_lock": false,
+          "selection_order": 1,
+          "selection_total": 1
+        }
+      }
+    },
+    "sprint-planning-room": {
+      "status": "ok",
+      "updated_at": "2026-03-17T16:16:50.364984+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b871d2-44b0-8325-ab43-452073cd61c9",
+        "artifact_count": 5,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b871d2-44b0-8325-ab43-452073cd61c9",
+        "claim": {
+          "lock": "acquired",
+          "lock_file": ".claim.lock",
+          "reclaimed_stale_lock": false,
+          "reclaimed_foreign_lock": false,
+          "selection_order": 1,
+          "selection_total": 1
+        }
+      }
+    },
+    "prompt-engineering-lab": {
+      "status": "ok",
+      "updated_at": "2026-03-17T16:16:51.614194+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b871d2-44b0-8325-ab43-452073cd61c9",
+        "artifact_count": 3,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b871d2-44b0-8325-ab43-452073cd61c9",
+        "claim": {
+          "lock": "acquired",
+          "lock_file": ".claim.lock",
+          "reclaimed_stale_lock": false,
+          "reclaimed_foreign_lock": false,
+          "selection_order": 1,
+          "selection_total": 1
+        }
+      }
+    },
+    "blueprint-forge": {
+      "status": "ok",
+      "updated_at": "2026-03-17T13:50:11.562623+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "artifact_count": 3,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "claim": {
+          "lock": "acquired",
+          "lock_file": ".claim.lock",
+          "reclaimed_stale_lock": false,
+          "reclaimed_foreign_lock": false,
+          "selection_order": 1,
+          "selection_total": 1
+        }
+      }
+    },
+    "factory-floor": {
+      "status": "ok",
+      "updated_at": "2026-03-17T13:50:12.707457+00:00",
+      "details": {
+        "project_slug": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory",
+        "conversation_id": "69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "artifact_count": 9,
+        "queue_depth": 1,
+        "last_job_id": "g-p-69a89fb12e4c8191a12a9ca8d64dc4f4-code-godot-the-arcade-arcane-factory--69b71380-7c8c-832b-88e0-4e82fb137edc",
+        "claim": {
+          "lock": "acquired",
+          "lock_file": ".claim.lock",
+          "reclaimed_stale_lock": false,
+          "reclaimed_foreign_lock": false,
+          "selection_order": 1,
+          "selection_total": 1
+        }
+      }
+    }
+  },
+  "updated_at": "2026-03-17T16:16:51.614175+00:00"
+}

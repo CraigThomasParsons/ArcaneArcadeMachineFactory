@@ -1,0 +1,73 @@
+{
+  "schema_version": "v1",
+  "generated_at": "2026-03-18T05:22:01.291206+00:00",
+  "source": {
+    "event_stream": "/home/craigpar/Code/ArcaneArcadeMachineFactory/TheFactoryHopper/docs/event_stream/events.jsonl",
+    "event_count": 1,
+    "deduped_event_count": 1,
+    "filters": {
+      "start_line": 1,
+      "max_events": 0
+    }
+  },
+  "blockers": {
+    "open": [
+      {
+        "blocker_key": "factory-floor:sprint0-task2-smoke:task2-smoke",
+        "blocker_id": "",
+        "stage": "factory-floor",
+        "job_id": "sprint0-task2-smoke",
+        "reason": "task2-smoke",
+        "status": "open",
+        "requires_user_action": false,
+        "opened_at": "2026-03-17T18:27:19.369054+00:00",
+        "updated_at": "2026-03-17T18:27:19.369054+00:00",
+        "age_seconds": 39281
+      }
+    ],
+    "all": {
+      "factory-floor:sprint0-task2-smoke:task2-smoke": {
+        "blocker_key": "factory-floor:sprint0-task2-smoke:task2-smoke",
+        "blocker_id": "",
+        "stage": "factory-floor",
+        "job_id": "sprint0-task2-smoke",
+        "reason": "task2-smoke",
+        "status": "open",
+        "requires_user_action": false,
+        "opened_at": "2026-03-17T18:27:19.369054+00:00",
+        "updated_at": "2026-03-17T18:27:19.369054+00:00"
+      }
+    }
+  },
+  "tasks": {
+    "items": {
+      "sprint0-task2-smoke": {
+        "attempts": {
+          "1": {
+            "stage": "factory-floor",
+            "last_event_type": "scrum.blocker.raised",
+            "last_status": "ok",
+            "last_reason": "task2-smoke",
+            "updated_at": "2026-03-17T18:27:19.369054+00:00"
+          }
+        },
+        "latest_attempt": 1,
+        "updated_at": "2026-03-17T18:27:19.369054+00:00"
+      }
+    },
+    "active_task_count": 1
+  },
+  "workers": {
+    "items": {}
+  },
+  "sprint": {
+    "health_status": "warning",
+    "open_blocker_count": 1,
+    "active_task_count": 1,
+    "throughput": {
+      "completed_count": 0,
+      "failed_count": 0,
+      "skipped_count": 0
+    }
+  }
+}

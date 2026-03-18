@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../Games/ChatRoomProjects"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"dafny-autopilot.enableDevelopmentFeatures": false
+	}
+}

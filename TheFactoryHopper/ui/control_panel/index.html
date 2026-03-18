@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factory Hopper Control Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <header class="topbar">
+      <div>
+        <h1>Factory Hopper Control Deck</h1>
+        <p class="subtitle">Live stage telemetry + operator actions</p>
+      </div>
+      <div class="actions">
+        <button id="refreshBtn" class="btn ghost">Refresh</button>
+        <button id="runAllBtn" class="btn primary">Run All Once</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section>
+        <h2>Stage Lanes</h2>
+        <div id="stages" class="stage-grid"></div>
+      </section>
+
+      <section>
+        <h2>Live Timeline</h2>
+        <div id="events" class="event-list"></div>
+      </section>
+    </main>
+
+    <template id="stageCardTemplate">
+      <article class="stage-card">
+        <div class="stage-head">
+          <h3 class="stage-name"></h3>
+          <span class="badge status">unknown</span>
+        </div>
+        <div class="metrics">
+          <div><label>Queue</label><strong class="queue-depth">0</strong></div>
+          <div><label>Outbox</label><strong class="outbox-count">0</strong></div>
+          <div><label>Archive</label><strong class="archive-count">0</strong></div>
+          <div><label>Failed</label><strong class="failed-count">0</strong></div>
+        </div>
+        <p class="detail"></p>
+        <div class="controls">
+          <button class="btn lane-run">Run Once</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

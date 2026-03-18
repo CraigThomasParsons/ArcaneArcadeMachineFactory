@@ -1,0 +1,11 @@
+{
+  "schema_version": "v1",
+  "generated_at": "2026-03-18T05:22:25.066136+00:00",
+  "legacy_source": "/home/craigpar/Code/ArcaneArcadeMachineFactory/TheFactoryHopper/chatroom_ws_audit/factory.chatroom.jsonl",
+  "contract_source": "/home/craigpar/Code/ArcaneArcadeMachineFactory/TheFactoryHopper/docs/event_stream/events.jsonl",
+  "legacy_signal_count": 0,
+  "contract_blocker_count": 0,
+  "contract_user_action_count": 0,
+  "reason_parity": [],
+  "parity_ok": true
+}

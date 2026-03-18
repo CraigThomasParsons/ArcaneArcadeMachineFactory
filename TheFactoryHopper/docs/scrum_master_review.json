@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "ts": "2026-03-17T18:57:16.290Z",
+  "summary": {
+    "total_signals": 0,
+    "blocked_count": 0,
+    "requires_user_action_count": 0,
+    "top_reasons": []
+  },
+  "actionable": [],
+  "open_blockers": {
+    "open_blockers_count": 0,
+    "requires_user_action_open_count": 0,
+    "actionable": []
+  }
+}

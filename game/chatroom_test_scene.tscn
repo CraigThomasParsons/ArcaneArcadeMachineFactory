@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://chatroom_test_scene.gd" id="1_v8wby"]
+[ext_resource type="Script" path="res://chatroom_bridge.gd" id="2_hnueh"]
+[ext_resource type="Script" path="res://stage_status_panel.gd" id="3_k3r5b"]
+
+[node name="ChatroomTestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v8wby")
+
+[node name="ChatroomBridge" type="Node" parent="."]
+script = ExtResource("2_hnueh")
+broker_url = "ws://127.0.0.1:8765"
+channel = "factory.chatroom"
+reconnect_delay_sec = 2.0
+
+[node name="StageStatusPanel" type="Control" parent="."]
+visible = false
+script = ExtResource("3_k3r5b")
+bridge_path = NodePath("../ChatroomBridge")
+stage_status_file = "/home/craigpar/Code/ArcaneArcadeMachineFactory/TheFactoryHopper/docs/stage_status.json"
+
+[node name="StatusLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 480.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.34, 0.36, 0.41, 1)
+text = "Status: idle"
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 44.0
+offset_right = 480.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.15, 0.2, 0.35, 1)
+theme_override_font_sizes/font_size = 20
+text = "Arcane Chat Prototype"
+
+[node name="StageSnapshotLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 12.0
+offset_right = 1264.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.28, 0.3, 0.35, 1)
+autowrap_mode = 3
+text = "Stage snapshot: not loaded"
+
+[node name="MessagesScroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 132.0
+offset_right = 1264.0
+offset_bottom = 632.0
+scroll_active = true
+
+[node name="MessagesList" type="VBoxContainer" parent="MessagesScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Composer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 646.0
+offset_right = 1264.0
+offset_bottom = 704.0
+theme_override_constants/separation = 12
+
+[node name="ComposerInput" type="LineEdit" parent="Composer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Type a message and press Enter or Send..."
+
+[node name="SendButton" type="Button" parent="Composer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.2, 0.32, 1)
+text = "Send"

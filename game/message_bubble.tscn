@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://message_bubble.gd" id="1_pv647"]
+
+[node name="MessageBubble" type="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_pv647")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Text" type="Label" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "Message"

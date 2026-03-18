@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "arcanearcade://schemas/chat_event.v1",
+  "title": "ChatroomEventV1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "ts",
+    "stage",
+    "actor",
+    "event",
+    "summary",
+    "artifact_refs",
+    "status",
+    "error_code",
+    "schema_version"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "ts": {"type": "string", "minLength": 1},
+    "stage": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "event": {"type": "string", "minLength": 1},
+    "summary": {"type": "string"},
+    "artifact_refs": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ok", "warn", "failed"]
+    },
+    "error_code": {"type": "string"},
+    "schema_version": {"type": "string", "const": "v1"},
+    "payload": {"type": ["object", "null"]}
+  },
+  "additionalProperties": true
+}

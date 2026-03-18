@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "../ChatGptToChatProjectsBridge"
+		},
+		{
+			"path": "../../Games/ChatRoomProjects"
+		},
+		{
+			"path": "../ContextControlledDevelopmentFactory"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../RTSColonyTerrainGenerator"
+		},
+		{
+			"path": "../ThePostalService"
+		}
+	],
+	"settings": {
+		"sync-rsync.onSave": true,
+		"sync-rsync.onSaveIndividual": false,
+		"sync-rsync.delete": true,
+		"sync-rsync.flags": "az",
+		"sync-rsync.sites": [
+			{
+				"name": "ChatProjects → Projects",
+				"localPath": "/home/craigpar/Code/ChatProjects/",
+				"remotePath": "/home/craigpar/Projects/",
+				"args": [
+					"--exclude-from=.gitignore"
+				],
+				"deleteFiles": true,
+				"upOnly": true
+			}
+		],
+		"dafny-autopilot.enableDevelopmentFeatures": false
+	}
+}
