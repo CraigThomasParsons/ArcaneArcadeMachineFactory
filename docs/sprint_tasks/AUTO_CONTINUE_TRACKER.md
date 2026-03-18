@@ -12,9 +12,13 @@ Generated: 2026-03-16
 ## Status Board
 
 - Sprint1: complete (2026-03-18)
-- Sprint2: ready
+- Sprint2: in-progress (Task 0 complete on 2026-03-18)
 - Sprint3: ready
 - Sprint4: ready
+
+## Current Progress
+
+- Sprint2: completed Task 0 scope lock and success metrics baseline.
 
 ## Per-Sprint Execution Rule
 
