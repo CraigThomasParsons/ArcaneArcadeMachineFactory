@@ -11,7 +11,7 @@ Generated: 2026-03-16
 
 ## Status Board
 
-- Sprint1: ready
+- Sprint1: complete (2026-03-18)
 - Sprint2: ready
 - Sprint3: ready
 - Sprint4: ready
