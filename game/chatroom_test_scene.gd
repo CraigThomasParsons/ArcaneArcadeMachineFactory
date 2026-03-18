@@ -10,6 +10,8 @@ extends Control
 @onready var send_button: Button = $Composer/SendButton
 
 const MAX_LINES: int = 200
+const MAX_CONVERSATION_ENTRIES: int = 1000
+const MAX_MESSAGE_LENGTH: int = 1000
 const FAKE_REPLY_DELAY_SEC: float = 0.75
 const MESSAGE_BUBBLE_SCENE: PackedScene = preload("res://message_bubble.tscn")
 const SAVE_FILE_PATH: String = "user://conversation_history.json"
@@ -113,6 +115,9 @@ func _submit_user_message(raw_text: String) -> void:
     if text.is_empty():
         _set_status("Status: type a message before sending")
         return
+    if text.length() > MAX_MESSAGE_LENGTH:
+        _set_status("Status: message too long (max %s chars)" % MAX_MESSAGE_LENGTH)
+        return
 
     _append_message(SPEAKER_USER, text)
 
@@ -156,12 +161,17 @@ func _append_message(speaker: String, text: String) -> void:
     # Single append path keeps in-memory state and rendered log aligned.
     # All send/reply/system paths should flow through this function.
     # That makes future persistence straightforward to add.
+    var normalized_text: String = text.strip_edges()
+    if normalized_text.is_empty():
+        return
+
     var entry: Dictionary = {
         "speaker": speaker,
-        "text": text,
+        "text": normalized_text,
         "ts": Time.get_datetime_string_from_system(true),
     }
-    _conversation.append(entry)
+    if not _append_entry_to_state(entry):
+        return
 
     _render_events_from_conversation()
     _save_conversation_to_disk()
@@ -180,6 +190,10 @@ func _render_events_from_conversation() -> void:
         var role: String = str(entry.get("speaker", "unknown"))
         var body: String = str(entry.get("text", ""))
         var bubble: Node = MESSAGE_BUBBLE_SCENE.instantiate()
+        if bubble == null:
+            continue
+        if not bubble.has_method("configure"):
+            continue
         bubble.call("configure", role, body)
         messages_list.add_child(bubble)
 
@@ -242,36 +256,72 @@ func _load_conversation_from_disk() -> void:
 
     var loaded: Array[Dictionary] = []
     for item in parsed:
-        if typeof(item) != TYPE_DICTIONARY:
+        var normalized: Dictionary = _normalize_loaded_entry(item)
+        if normalized.is_empty():
             continue
-
-        var entry: Dictionary = item
-        var role: String = str(entry.get("speaker", "")).strip_edges()
-        if role.is_empty():
-            # Backward compatibility for older saved shape.
-            role = str(entry.get("role", "")).strip_edges()
-            if role == "user":
-                role = SPEAKER_USER
-            elif role == "assistant":
-                role = SPEAKER_PIPER
-            elif role == "system":
-                role = SPEAKER_SYSTEM
-
-        var text: String = str(entry.get("text", "")).strip_edges()
-        var ts: String = str(entry.get("ts", "")).strip_edges()
-        if role == SPEAKER_SYSTEM:
-            continue
-        if role.is_empty() or text.is_empty():
-            continue
-
-        loaded.append({
-            "speaker": role,
-            "text": text,
-            "ts": ts,
-        })
+        loaded.append(normalized)
 
     _conversation = loaded
     _render_events_from_conversation()
+
+
+func _normalize_loaded_entry(item: Variant) -> Dictionary:
+    if typeof(item) != TYPE_DICTIONARY:
+        return {}
+
+    var entry: Dictionary = item
+    var role: String = str(entry.get("speaker", "")).strip_edges()
+    if role.is_empty():
+        # Backward compatibility for older saved shape.
+        role = str(entry.get("role", "")).strip_edges()
+        if role == "user":
+            role = SPEAKER_USER
+        elif role == "assistant":
+            role = SPEAKER_PIPER
+        elif role == "system":
+            role = SPEAKER_SYSTEM
+
+    var text: String = str(entry.get("text", "")).strip_edges()
+    if text.length() > MAX_MESSAGE_LENGTH:
+        text = text.left(MAX_MESSAGE_LENGTH)
+    var ts: String = str(entry.get("ts", "")).strip_edges()
+
+    var normalized: Dictionary = {
+        "speaker": role,
+        "text": text,
+        "ts": ts,
+    }
+
+    if not _is_valid_conversation_entry(normalized):
+        return {}
+
+    if role == SPEAKER_SYSTEM:
+        return {}
+
+    return normalized
+
+
+func _is_valid_conversation_entry(entry: Dictionary) -> bool:
+    var speaker: String = str(entry.get("speaker", "")).strip_edges()
+    var text: String = str(entry.get("text", "")).strip_edges()
+    if speaker.is_empty() or text.is_empty():
+        return false
+    if text.length() > MAX_MESSAGE_LENGTH:
+        return false
+    return true
+
+
+func _append_entry_to_state(entry: Dictionary) -> bool:
+    if not _is_valid_conversation_entry(entry):
+        _on_broker_error("conversation entry rejected by validation")
+        return false
+
+    _conversation.append(entry)
+    if _conversation.size() > MAX_CONVERSATION_ENTRIES:
+        var overflow: int = _conversation.size() - MAX_CONVERSATION_ENTRIES
+        _conversation = _conversation.slice(overflow)
+
+    return true
 
 
 func _set_status(value: String) -> void:
