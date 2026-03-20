@@ -12,13 +12,14 @@ Generated: 2026-03-16
 ## Status Board
 
 - Sprint1: complete (2026-03-18)
-- Sprint2: in-progress (Task 0 complete on 2026-03-18)
+- Sprint2: in-progress (Task 0 complete on 2026-03-18, Task 1 complete on 2026-03-20)
 - Sprint3: ready
 - Sprint4: ready
 
 ## Current Progress
 
 - Sprint2: completed Task 0 scope lock and success metrics baseline.
+- Sprint2: completed Task 1 architecture and interface baseline (2026-03-20) — arch diagram, interface contracts, dependency map.
 
 ## Per-Sprint Execution Rule
 
